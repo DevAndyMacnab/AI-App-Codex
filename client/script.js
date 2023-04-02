@@ -75,7 +75,7 @@ const handleSubmit=async(event)=>{
   loader(messageDiv);
 
   //fetch data from the server
-  const response = await fetch("https://codex-9u7j.onrender.com/",{
+  const response = await fetch("https://codex-9u7j.onrender.com",{
     method:"POST",
     headers:{
       "Content-Type":"application/json"
@@ -99,6 +99,7 @@ const handleSubmit=async(event)=>{
   }else{
     const error= await response.text();
     messageDiv.innerHTML="Something went wrong";
+    console.log(error)
     alert(error);
   }
 }
